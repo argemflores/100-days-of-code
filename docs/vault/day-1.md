@@ -1,8 +1,8 @@
 ---
 id: 3t8VxzD7EyQKSUr8uEpGT
-title: Day 1 - Beginner - Working with Variables in Python to Manage Data
-desc: ''
-updated: 1640441075326
+title: Day 1 - Beginner
+desc: 'Working with Variables in Python to Manage Data'
+updated: 1640587038650
 created: 1640439204743
 ---
 
