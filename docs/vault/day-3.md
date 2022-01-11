@@ -2,7 +2,7 @@
 id: hnGiQ8UPD9akby4lRWt2D
 title: Day 3 - Beginner
 desc: 'Control Flow and Logical Operators'
-updated: 1641912458458
+updated: 1641914216227
 created: 1641824164751
 ---
 
@@ -27,7 +27,7 @@ created: 1641824164751
 if condition:
     # do this
 else:
-    # do that
+    # do this
 ```
 
 ```py
@@ -59,4 +59,33 @@ else:
 ```py
 8 % 2 # returns 0
 9 % 2 # returns 1
+```
+
+## Nested conditionals
+
+- nest conditional statements inside another
+
+### nested if/else
+
+```py
+if condition:
+    if condition:
+        # do this
+    else:
+        # do this
+else:
+    # do this
+```
+
+### if/elif/else
+
+- checks conditions in sequence
+
+```py
+if condition1:
+    # do A
+elif condition2:
+    # do B
+else:
+    # do this
 ```
