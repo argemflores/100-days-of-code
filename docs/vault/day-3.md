@@ -2,7 +2,7 @@
 id: hnGiQ8UPD9akby4lRWt2D
 title: Day 3 - Beginner
 desc: 'Control Flow and Logical Operators'
-updated: 1641826629713
+updated: 1641912458458
 created: 1641824164751
 ---
 
@@ -30,8 +30,6 @@ else:
     # do that
 ```
 
-### Example
-
 ```py
 water_level = 50
 
@@ -57,8 +55,6 @@ else:
 ## Modulo
 
 - `%` calculates for the remainder after dividing one number by another
-
-### Example
 
 ```py
 8 % 2 # returns 0
