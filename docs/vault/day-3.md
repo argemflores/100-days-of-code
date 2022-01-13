@@ -2,7 +2,7 @@
 id: hnGiQ8UPD9akby4lRWt2D
 title: Day 3 - Beginner
 desc: 'Control Flow and Logical Operators'
-updated: 1641914216227
+updated: 1642086041364
 created: 1641824164751
 ---
 
@@ -88,4 +88,24 @@ elif condition2:
     # do B
 else:
     # do this
+```
+
+## Multiple If Statements in Succession
+
+```py
+if condition1:
+    # do A
+
+if condition2:
+    # do B
+
+if condition3:
+    # do C
+```
+
+### Increment value
+
+```py
+x = x + 1
+x += 1
 ```
