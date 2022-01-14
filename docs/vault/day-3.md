@@ -2,7 +2,7 @@
 id: hnGiQ8UPD9akby4lRWt2D
 title: Day 3 - Beginner
 desc: 'Control Flow and Logical Operators'
-updated: 1642170832424
+updated: 1642171301097
 created: 1641824164751
 ---
 
@@ -118,3 +118,14 @@ x += 1
 - `or`
   - TRUE if at least one condition is true
   - FALSE if all conditions are false
+
+## Multi-block string
+
+- enclosed in triple quotes `'''`
+
+```py
+'''
+This line is part of a multi-block string.
+This line is also part of a multi-block string.
+'''
+```
