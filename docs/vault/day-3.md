@@ -2,7 +2,7 @@
 id: hnGiQ8UPD9akby4lRWt2D
 title: Day 3 - Beginner
 desc: 'Control Flow and Logical Operators'
-updated: 1642086041364
+updated: 1642170832424
 created: 1641824164751
 ---
 
@@ -90,7 +90,7 @@ else:
     # do this
 ```
 
-## Multiple If Statements in Succession
+## Multiple if statements
 
 ```py
 if condition1:
@@ -109,3 +109,12 @@ if condition3:
 x = x + 1
 x += 1
 ```
+
+## Logical operators
+
+- `and`
+  - TRUE if all conditions are true
+  - FALSE if at least one condition is false
+- `or`
+  - TRUE if at least one condition is true
+  - FALSE if all conditions are false
