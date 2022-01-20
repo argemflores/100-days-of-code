@@ -2,13 +2,13 @@
 id: 31RitqzQffTGbwwiE3U2y
 title: Day
 desc: ''
-updated: 1641824811184
+updated: 1642687051375
 created: 1641824792413
 ---
 
 ## Overview
 
-### Goals
+### Lessons
 
 1.
 
