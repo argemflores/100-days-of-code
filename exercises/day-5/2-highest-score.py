@@ -14,4 +14,4 @@ for score in student_scores:
         # score is higher than current highest score
         highest_score = score
 
-print(highest_score)
+print('The highest score in the class is:', highest_score)

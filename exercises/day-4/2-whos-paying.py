@@ -5,8 +5,8 @@ names = names_string.split(", ")
 
 #Write your code below this line 👇
 
-from random import randint
+import random
 
 # sample input: Angela, Ben, Chloe, Danny, Eve
 
-print(f'{names[randint(0, len(names) - 1)]} is going to buy the meal today!')
+print(f'{names[random.randint(0, len(names) - 1)]} is going to buy the meal today!')
