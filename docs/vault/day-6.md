@@ -2,7 +2,7 @@
 id: xOyWcjrOcRUBsxZUYPT6x
 title: Day 6 - Beginner
 desc: 'Python Functions & Karel'
-updated: 1643724232236
+updated: 1643810762521
 created: 1643723392137
 ---
 
@@ -31,6 +31,16 @@ def my_function():
     # finally do this
 
 my_function()
+```
+
+## While loop
+
+- loop that will continue to run while the condition is true
+- infinite loop occurs when condition remains true always, thus not stopping
+
+```py
+while condition_is_true:
+    # do something repeatedly
 ```
 
 ## References
