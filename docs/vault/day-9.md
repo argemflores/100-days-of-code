@@ -2,7 +2,7 @@
 id: 2U08AgbpLNRVqeDp6vZXQ
 title: Day 9 - Beginner
 desc: 'Dictionaries, Nesting, and The Secret Auction'
-updated: 1644418514664
+updated: 1644497092532
 created: 1644417404912
 ---
 
@@ -57,4 +57,37 @@ student_scores = {
 # loop with key and value per item
 for student, score in student_scores.items():
     print(student, score)
+```
+
+## Nesting
+
+- collections inside a collection
+- more flexible in storing different kinds of data
+
+```py
+# lists in a dictionary
+travel_log = {
+  "France": ["Paris", "Lille", "Dijon"],
+  "Germany": ["Berlin", "Hamburg", "Stuttgart"],
+}
+
+# dictionaries in a dictionary
+travel_log = {
+  "France": {"cities_visited": ["Paris", "Lille", "Dijon"], "total_visits": 12},
+  "Germany": {"cities_visited": ["Berlin", "Hamburg", "Stuttgart"], "total_visits": 5},
+}
+
+# dictionaries in a list
+travel_log = [
+{
+  "country": "France",
+  "cities_visited": ["Paris", "Lille", "Dijon"],
+  "total_visits": 12,
+},
+{
+  "country": "Germany",
+  "cities_visited": ["Berlin", "Hamburg", "Stuttgart"],
+  "total_visits": 5,
+},
+]
 ```
