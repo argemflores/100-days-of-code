@@ -23,5 +23,17 @@
 			"$1",
 			"```"
 		]
+	},
+	"flowchart": {
+		"scope": "markdown",
+		"prefix": "flowchart",
+		"body": [
+			"```mermaid",
+			"flowchart TB",
+			"    Start((Start)) --> Element[Description]",
+			"    $1",
+			"    Element --> Stop((Stop))",
+			"```"
+		]
 	}
 }
