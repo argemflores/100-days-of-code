@@ -2,7 +2,7 @@
 id: g37xP5z1RX5RPnhhfYauf
 title: Day 10 - Beginner
 desc: 'Functions with Outputs'
-updated: 1644846799832
+updated: 1644931472672
 created: 1644846147386
 ---
 
@@ -34,8 +34,18 @@ def my_function(something):
 output = my_function(x)
 ```
 
-### Multiple return values
+## Docstrings
+
+- create documentation in the code
 
 ```py
+def my_function(something):
+    """This is a docstring
 
+    This is another line of information
+    """
+
+    # do this
+    # then do this
+    # finally do this
 ```
