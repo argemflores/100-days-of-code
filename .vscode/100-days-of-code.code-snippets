@@ -15,11 +15,20 @@
 	// 	],
 	// 	"description": "Log output to console"
 	// }
-	"code block": {
+	"python code": {
 		"scope": "markdown",
-		"prefix": "code block",
+		"prefix": "python code",
 		"body": [
-			"```py",
+			"```python",
+			"$1",
+			"```"
+		]
+	},
+	"shell code": {
+		"scope": "markdown",
+		"prefix": "shell code",
+		"body": [
+			"```shell",
 			"$1",
 			"```"
 		]
