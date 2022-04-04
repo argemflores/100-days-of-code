@@ -14,7 +14,7 @@ created: 1647525539044
 
 ### Project
 
--  [Higher Lower Game](https://higherlowergame.com) ⚖️
+- [Higher Lower Game](https://higherlowergame.com) ⚖️
 
 ## Problem solving process
 
