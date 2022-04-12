@@ -29,3 +29,9 @@ resources = {
     "milk": 200,
     "coffee": 100,
 }
+
+original_resources = {
+    "water": 300,
+    "milk": 200,
+    "coffee": 100,
+}

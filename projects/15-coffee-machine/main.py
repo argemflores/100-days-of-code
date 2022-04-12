@@ -19,19 +19,23 @@ def ask_customer():
 def turn_off():
     """Turn off the Coffee Machine by entering "off" to the prompt."""
 
+    print_report()
+
     # show turned off message
     print("Coffee machine is turned off. Thank you!")
 
     return False
 
 
-def print_report(money):
+def print_report():
     """Print report."""
 
+    # print every resource and their amount
     for resource, amount in data.resources.items():
         print(f"{resource.capitalize()}: {amount}ml")
 
-    print(f"Money: ${money:.2f}")
+    # print current money
+    print(f"Money: ${data.MENU['money']:.2f}")
 
 
 def is_sufficient(coffee):
@@ -54,35 +58,103 @@ def is_sufficient(coffee):
     # show insufficient resources
     print("Sorry, there is not enough: ")
     for resource, amount_needed in needed_resources.items():
-        print(f"- {resource} ({amount_needed}ml needed)")
+        print(f"- {resource.capitalize()} ({amount_needed}ml more needed)")
 
+    # not sufficient resources
     return False
 
-# TODO: 5. Process coins.
 
-# TODO: 6. Check transaction successful?
+def ask_coins(denomination):
+    """Ask coins and validate payment"""
 
-# TODO: 7. Make coffee.
+    # continue asking until correct number is provided
+    while True:
+        # ask for the number of coins
+        coins = input(f"How many {denomination}? ").strip()
+
+        # payment is valid or empty (0)
+        if not coins or coins.isnumeric():
+            # convert empty to 0 coins
+            if not coins:
+                coins = 0
+            break
+        else:
+            # payment is invalid, ask again
+            print("Invalid payment, please try again.")
+
+    # return number of coins
+    return int(coins)
+
+
+def process_order(coffee):
+    """Process payment and coffee."""
+
+    # ask payment
+    print("Please insert coins.")
+
+    # ask number of coins for every denomination
+    quarters = ask_coins("quarters")
+    dimes = ask_coins("dimes")
+    nickels = ask_coins("nickels")
+    pennies = ask_coins("pennies")
+
+    # compute payment
+    payment = round(0.25 * quarters + 0.1 * dimes + 0.05 * nickels + 0.01 * pennies, 2)
+
+    # get current money and cost of coffee
+    cost = data.MENU[coffee]['cost']
+    money = data.MENU['money']
+
+    # payment is not enough
+    if payment < cost:
+        # order is not successful
+        print(f"Sorry that's not enough money (needs ${cost:.2f}). Money refunded.")
+
+        return False
+    else:
+        # payment is too much
+        if payment > cost:
+            # return change to customer
+            change = round(payment - cost, 2)
+
+            print(f"Here is ${change:.2f} in change.")
+
+        # deduct resources
+        for resource, amount in data.MENU[coffee]['ingredients'].items():
+            data.resources[resource] -= amount
+
+        # payment successful, add to money
+        data.MENU['money'] = round(money + cost, 2)
+
+    return True
 
 
 def main():
-    money = 0.0
-    is_running = True
+    data.MENU['money'] = 0.0
 
-    # ask customer
-    choice = ask_customer()
+    while True:
+        # ask customer
+        choice = ask_customer()
 
-    # process valid choice
-    if choice is not False:
-        if choice == 'off':
-            # turn off coffee machine
-            is_running = turn_off()
-        elif choice == 'report':
-            # print resources
-            print_report(money)
+        # process valid choice
+        if choice is False:
+            print("Invalid choice, please try again.")
         else:
-            # check resources
-            is_sufficient(choice)
+            if choice == 'off':
+                # turn off coffee machine
+                turn_off()
+                break
+            elif choice == 'report':
+                # print resources
+                print_report()
+            else:
+                # check resources
+                if is_sufficient(choice):
+                    # process payment and coffee
+                    if process_order(choice):
+                        # payment and coffee successful
+                        print_report()
+                        print(f"Here is your {choice}. Enjoy!")
 
 
 if __name__ == '__main__':
