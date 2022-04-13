@@ -130,8 +130,10 @@ def process_order(coffee):
 
 
 def main():
+    # set default money
     data.MENU['money'] = 0.0
 
+    # continue asking until turned off
     while True:
         # ask customer
         choice = ask_customer()
