@@ -4,8 +4,11 @@ import data
 def ask_customer():
     """Prompt user by asking "What would you like? (espresso/latte/cappuccino): "."""
 
+    # print menu of coffee
+    print_menu()
+
     # ask user, then remove spaces and set to lowercase
-    choice = input("What would you like? (espresso/latte/cappuccino): ").strip().lower()
+    choice = input("\n🤖 What would you like? (espresso/latte/cappuccino): ").strip().lower()
 
     # check if choice is valid
     if choice not in data.MENU.keys() and choice not in ['off', 'report']:
@@ -22,20 +25,33 @@ def turn_off():
     print_report()
 
     # show turned off message
-    print("Coffee machine is turned off. Thank you!")
+    print("🔘 Coffee machine is turned off. Thank you!")
 
     return False
+
+
+def print_menu():
+    """Print menu."""
+
+    print("\n☕️ Menu")
+
+    # print every coffee in the menu and their amount
+    for coffee, info in data.MENU.items():
+        if coffee != 'money':
+            print(f"* {coffee.capitalize()}: ${info['cost']:.2f}")
 
 
 def print_report():
     """Print report."""
 
+    print("\n🧾 Report")
+
     # print every resource and their amount
     for resource, amount in data.resources.items():
-        print(f"{resource.capitalize()}: {amount}ml")
+        print(f"* {resource.capitalize()}: {amount}ml")
 
     # print current money
-    print(f"Money: ${data.MENU['money']:.2f}")
+    print(f"* Money: ${data.MENU['money']:.2f}")
 
 
 def is_sufficient(coffee):
@@ -56,9 +72,9 @@ def is_sufficient(coffee):
         return True
 
     # show insufficient resources
-    print("Sorry, there is not enough: ")
+    print("❌ Sorry, there is not enough: ")
     for resource, amount_needed in needed_resources.items():
-        print(f"- {resource.capitalize()} ({amount_needed}ml more needed)")
+        print(f"   - {resource.capitalize()} ({amount_needed}ml more needed)")
 
     # not sufficient resources
     return False
@@ -70,7 +86,7 @@ def ask_coins(denomination):
     # continue asking until correct number is provided
     while True:
         # ask for the number of coins
-        coins = input(f"How many {denomination}? ").strip()
+        coins = input(f"   How many {denomination}? ").strip()
 
         # payment is valid or empty (0)
         if not coins or coins.isnumeric():
@@ -80,7 +96,7 @@ def ask_coins(denomination):
             break
         else:
             # payment is invalid, ask again
-            print("Invalid payment, please try again.")
+            print("❌ Invalid payment, please try again.")
 
     # return number of coins
     return int(coins)
@@ -90,7 +106,7 @@ def process_order(coffee):
     """Process payment and coffee."""
 
     # ask payment
-    print("Please insert coins.")
+    print("🪙 Please insert coins.")
 
     # ask number of coins for every denomination
     quarters = ask_coins("quarters")
@@ -108,7 +124,7 @@ def process_order(coffee):
     # payment is not enough
     if payment < cost:
         # order is not successful
-        print(f"Sorry that's not enough money (needs ${cost:.2f}). Money refunded.")
+        print(f"❌ Sorry that's not enough money (needs ${cost:.2f}). Money refunded.")
 
         return False
     else:
@@ -140,7 +156,7 @@ def main():
 
         # process valid choice
         if choice is False:
-            print("Invalid choice, please try again.")
+            print("❌ Invalid choice, please try again.")
         else:
             if choice == 'off':
                 # turn off coffee machine
@@ -156,7 +172,7 @@ def main():
                     if process_order(choice):
                         # payment and coffee successful
                         print_report()
-                        print(f"Here is your {choice}. Enjoy!")
+                        print(f"✅ Here is your {choice}. Enjoy! ☕️")
 
 
 if __name__ == '__main__':
