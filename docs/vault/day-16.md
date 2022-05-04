@@ -2,7 +2,7 @@
 id: au1o21ndfrrba1501bt7lw4
 title: Day 16 - Intermediate
 desc: 'Object-Oriented Programming (OOP)'
-updated: 1650697034910
+updated: 1651670451156
 created: 1650696361340
 ---
 
@@ -42,3 +42,8 @@ car = CarBlueprint()
 # car = object
 # Car = class
 ```
+
+### Package
+
+- whole bunch of codes compiled together
+- install a package from PyPi
