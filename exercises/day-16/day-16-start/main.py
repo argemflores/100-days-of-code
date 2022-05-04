@@ -1,7 +1,7 @@
 import another_module
-# print(another_module.another_variable)
+print(another_module.another_variable)
 
-# import
+# import classes
 from turtle import Turtle, Screen
 
 # create turtle
@@ -19,3 +19,20 @@ timmy.forward(100)
 my_screen = Screen()
 print(my_screen.canvheight)
 my_screen.exitonclick()
+
+# import class
+from prettytable import PrettyTable
+
+table = PrettyTable()
+
+# https://pokemondb.net/pokedex/all
+
+# add columns and rows
+table.add_column("Pokemon Name", ["Pikachu", "Squirtle", "Charmander"])
+table.add_column("Type", ["Electric", "Water", "Fire"])
+
+# change to left alignment
+table.align = "l"
+
+# print table
+print(table)
